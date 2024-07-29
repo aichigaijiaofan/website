@@ -226,13 +226,14 @@
     <section id="team-intro" class="team-intro section-bg">
       <h2 class="title1">团队介绍</h2>
       <div class="team-members">
-        
+
+          {% for item in team %}
           <div class="team-member">
             <div class="profile-image">
-              <img src="{% static 'media/team/03.jpeg'%}" alt="">
+              <img src="media/{{ item.avatar }}" alt="">
             </div>
-            <h4 class="name">马老师</h4>
-            <p class="position">董事长</p>
+            <h4 class="name">{{ item.name }}</h4>
+            <p class="position">{{ item.title }}</p>
             <ul class="social-links">
               <li><i class="fa fa-weixin"></i></li>
               <li><i class="fa fa-weibo"></i></li>
@@ -240,62 +241,7 @@
               <li><i class="fa fa-linkedin-square "></i></li>
             </ul>
           </div>
-        
-          <div class="team-member">
-            <div class="profile-image">
-              <img src="{% static 'media/team/01.jpeg'%}" alt="">
-            </div>
-            <h4 class="name">andy</h4>
-            <p class="position">CEO</p>
-            <ul class="social-links">
-              <li><i class="fa fa-weixin"></i></li>
-              <li><i class="fa fa-weibo"></i></li>
-              <li><i class="fa fa-github"></i></li>
-              <li><i class="fa fa-linkedin-square "></i></li>
-            </ul>
-          </div>
-        
-          <div class="team-member">
-            <div class="profile-image">
-              <img src="{% static 'media/team/科比.jpeg'%}" alt="">
-            </div>
-            <h4 class="name">kobe</h4>
-            <p class="position">体育部长</p>
-            <ul class="social-links">
-              <li><i class="fa fa-weixin"></i></li>
-              <li><i class="fa fa-weibo"></i></li>
-              <li><i class="fa fa-github"></i></li>
-              <li><i class="fa fa-linkedin-square "></i></li>
-            </ul>
-          </div>
-        
-          <div class="team-member">
-            <div class="profile-image">
-              <img src="{% static 'media/team/04.jpeg'%}" alt="">
-            </div>
-            <h4 class="name">赵四</h4>
-            <p class="position">文艺部长</p>
-            <ul class="social-links">
-              <li><i class="fa fa-weixin"></i></li>
-              <li><i class="fa fa-weibo"></i></li>
-              <li><i class="fa fa-github"></i></li>
-              <li><i class="fa fa-linkedin-square "></i></li>
-            </ul>
-          </div>
-        
-          <div class="team-member">
-            <div class="profile-image">
-              <img src="{% static 'media/team/02.jpeg'%}" alt="">
-            </div>
-            <h4 class="name">张三</h4>
-            <p class="position">HR</p>
-            <ul class="social-links">
-              <li><i class="fa fa-weixin"></i></li>
-              <li><i class="fa fa-weibo"></i></li>
-              <li><i class="fa fa-github"></i></li>
-              <li><i class="fa fa-linkedin-square "></i></li>
-            </ul>
-          </div>
+          {% endfor %}
         
       </div>
     </section>
