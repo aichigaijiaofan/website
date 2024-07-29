@@ -7,5 +7,8 @@ def new_list(request):
 
 
 def detail(request, id):
-    news = News.objects.get(pk=id)
-    return render(request, 'detail.html', {'news': news})
+    try:
+        news = News.objects.get(pk=id)
+        return render(request, 'detail.html', {'news': news})
+    except:
+        return render(request, '404.html')
