@@ -275,55 +275,23 @@
       <h2 class="title1">资讯中心</h2>
       <p class="intro">关注公司动态，获取一手信息</p>
       <div class="activities">
-        
+         {% for item in news %}
         <div class="activity">
           <div class="act-image-wrapper">
-            <img src="{% static 'media/news/23.png'%}" alt="">
+            <img src="/media/{{ item.cover }}" alt="">
           </div>
           <div class="meta">
             <p class="date-published">
-              <i class="fa fa-calendar"></i> 2022年9月7日 11:24
+              <i class="fa fa-calendar"></i> {{ item.created_at }}
             </p>
           </div>
-          <h2 class="act-title">网站建设中常见的五大问题</h2>
-          <article>网站建设过程中会遇到许多问题，南京网站制...</article>
-          <a href="/news/3">
+          <h2 class="act-title">{{ item.title }}</h2>
+          <article>{{ item.content|slice:'20' }}...</article>
+          <a href="/news/{{ item.id }}">
           <button class="readmore-btn">阅读更多</button>
           </a>
         </div>
-        
-        <div class="activity">
-          <div class="act-image-wrapper">
-            <img src="{% static 'media/news/19.jpg'%}" alt="">
-          </div>
-          <div class="meta">
-            <p class="date-published">
-              <i class="fa fa-calendar"></i> 2022年9月7日 11:24
-            </p>
-          </div>
-          <h2 class="act-title">SEO网站的基本术语</h2>
-          <article>&lt;table border=&quot;1&quot; ce...</article>
-          <a href="/news/2">
-          <button class="readmore-btn">阅读更多</button>
-          </a>
-        </div>
-        
-        <div class="activity">
-          <div class="act-image-wrapper">
-            <img src="{% static 'media/news/21.png'%}" alt="">
-          </div>
-          <div class="meta">
-            <p class="date-published">
-              <i class="fa fa-calendar"></i> 2022年9月7日 11:23
-            </p>
-          </div>
-          <h2 class="act-title">什么是伪静态</h2>
-          <article>伪静态是相对真实静态来讲的，真实静态会生...</article>
-          <a href="/news/1">
-          <button class="readmore-btn">阅读更多</button>
-          </a>
-        </div>
-        
+          {% endfor %}
       </div>
       <div>
         <a href="/news/list">
