@@ -40,7 +40,9 @@ INSTALLED_APPS = [
     'mysite',
     'news',
     'slide',
-    'team'
+    'team',
+    'ckeditor',
+    'ckeditor_uploader',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +142,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # media配置
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 配置ckeditor
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'

@@ -7,6 +7,6 @@
 <body>
     <h2>{{ news.title }}</h2>
     <p>{{ news.created_at }}</p>
-    <P>{{ news.content }}</P>
+    <P>{{ news.content|safe }}</P>
 </body>
 </html>

@@ -1,5 +1,6 @@
 from django.db import models
-
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
 # Create your models here.
 class Category(models.Model):
     id = models.AutoField(primary_key=True)
@@ -16,7 +17,7 @@ class Category(models.Model):
 class News(models.Model):
     id = models.AutoField(primary_key=True)
     title = models.CharField('标题', max_length=100)
-    content = models.TextField('新闻内容')
+    content = RichTextUploadingField()
     cover = models.ImageField('封面', upload_to='news', blank=True, null=True, help_text='最佳尺寸：480*270')
     created_at = models.DateTimeField('创建时间', auto_now_add=True, editable=True)
     updated_at = models.DateTimeField('更新时间', auto_now=True, editable=True)

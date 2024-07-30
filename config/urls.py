@@ -20,6 +20,7 @@ from mysite import views
 urlpatterns = [
     path('',views.index),
     path('news/', include('news.urls')),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
     path("admin/", admin.site.urls),
 ]
 
