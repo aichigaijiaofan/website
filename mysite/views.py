@@ -13,6 +13,8 @@ def index(request):
     news = News.objects.filter(category_id=1).order_by('-created_at')[:3]
     # 获取成功案例内容
     cases = News.objects.filter().exclude(category_id=1).order_by('-created_at')
+    section = request.GET.get('section', None)
+    print(section)
     return render(request, 'index.html',{
         'slides': slides,
         'team': team,

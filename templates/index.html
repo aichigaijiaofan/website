@@ -330,6 +330,17 @@
   <script src="{% static 'libs/isotope/isotope.pkgd.min.js'%}"></script>
   <script src="{% static 'libs/smooth-scroll/smooth-scroll.polyfills.min.js'%}"></script>
   <script src="{% static 'js/index.js'%}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var section = new URLSearchParams(window.location.search).get('section')
+        if (section){
+            var element = document.getElementById(section);
+        }
+        if (element){
+            element.scrollIntoView();
+        }
+    })
+</script>
 </body>
 
 </html>

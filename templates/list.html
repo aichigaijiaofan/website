@@ -1,15 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>新闻列表</title>
-</head>
-<body>
-{% for item in news_list %}
-    <a href="/news/{{ item.id }}">
-        <h2>{{ item.title }}</h2>
-    </a>
 
-{% endfor %}
+{% include 'header.html' %}
+<div class="container-wrapper">
+    <section id="about-us" class="about-us">
+          <h2 class="title1" style="padding: 20px 0">新闻列表</h2>
+
+            {% for item in news_list %}
+            <div style="padding: 10px 0">
+                <a class="intro"  href="/news/{{ item.id }}">{{ item.title }}</a>
+            </div>
+        {% endfor %}
+
+    </section>
+</div>
+{% include 'footer.html' %}
 </body>
 </html>

@@ -5,8 +5,17 @@
     <title>新闻详情</title>
 </head>
 <body>
-    <h2>{{ news.title }}</h2>
-    <p>{{ news.created_at }}</p>
-    <P>{{ news.content|safe }}</P>
+{% include 'header.html' %}
+<div class="container-wrapper">
+    <section id="about-us" class="about-us">
+          <h2  class="title1" style="padding: 20px 0">{{ news.title }}</h2>
+            <p>{{ news.created_at }}</p>
+            <div style="padding: 6px 0">
+                <p class="intro">{{ news.content|safe }}</p>
+            </div>
+
+    </section>
+</div>
+{% include 'footer.html' %}
 </body>
 </html>
